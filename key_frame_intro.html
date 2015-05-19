@@ -1,0 +1,41 @@
+<!ODCTYPE html>
+<html>
+<header>
+	<title>CSS Key Frame</title>
+	<style>
+	.object {
+		height: 100px;
+		width: 100px;
+		position: relative;
+		background-color: blue; 
+		-webkit-animation:object_move 5s infinite;
+		-moz-animation:object_move 5s infinite;
+		        animation:object_move 5s infinite;
+	}
+
+
+	@-webkit-keyframes object_move {
+		0%    {top:   0px;}
+		25%   {top: 100px;}
+	    50%   {top: 200px;}
+		75%   {top: 100px;}
+		100%  {top:   0px;}
+	}
+
+	@keyframes object_move {
+		0%    {top:   0px;}
+		25%   {top: 100px;}
+	    50%   {top: 200px;}
+		75%   {top: 100px;}
+		100%  {top:   0px;}
+	}
+
+
+	
+
+	</style>
+</header>
+<body>
+	<div class="object"></div>
+</body>
+</html>
