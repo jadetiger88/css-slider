@@ -61,6 +61,12 @@ ul.slides img {
 	position:relative;
 }
 
+/* order of the stuff matters */ 
+ul.slides li {
+	position: absolute;
+	z-index: 50; 
+}
+
 
 /*
 ** Adds a little triagnle on the hoverbox 
@@ -111,6 +117,11 @@ ul.thumbs li a:hover span {
 	100% {left: 0px}
 }
 
+@-ms-keyframes 'slides' {
+	0% {left: -500px; }
+	100% {left: 0px}
+}
+
 @keyframes 'slides' {
 	0% {left: -500px; }
 	100% {left: 0px;}
@@ -126,7 +137,55 @@ ul.slides li:target {
 	-moz-animation-duration:1s;
 	-moz-animation-iteration-count: 1;
 
+	-ms-animation-name: slides;
+	-ms-animation-duration:1s;
+	-ms-animation-iteration-count: 1;
+
 	animation-name: slides;
 	animation-duration:1s;
 	animation-iteration-count: 1;
 }
+
+/*
+Not target show the last targeted
+*/
+@-webkit-keyframes 'not_target' {
+	0% {z-index: 75}
+	100% {z-index: 75}
+}
+
+@-moz-keyframes 'not_target' {
+	0% {z-index: 75}
+	100% {z-index: 75}
+}
+
+@-ms-keyframes 'not_target' {
+	0% {z-index: 75}
+	100% {z-index: 75}
+}
+
+@keyframes 'not_target' {
+	0% {z-index: 75}
+	100% {z-index: 75}
+}
+
+
+
+ul.slides li:not(:target) {
+	-webkit-animation-name: not_target;
+	-webkit-animation-duration:1s;
+	-webkit-animation-iteration-count: 1;
+
+	-moz-animation-name: not_target;
+	-moz-animation-duration:1s;
+	-moz-animation-iteration-count: 1;
+
+	-ms-animation-name: not_target;
+	-ms-animation-duration:1s;
+	-ms-animation-iteration-count: 1;
+
+	animation-name: not_target;
+	animation-duration:1s;
+	animation-iteration-count: 1;
+}
+
